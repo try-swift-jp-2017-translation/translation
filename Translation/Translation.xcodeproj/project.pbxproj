@@ -13,6 +13,8 @@
 		3748D52D1E6A5CDE00544D41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3748D52C1E6A5CDE00544D41 /* Assets.xcassets */; };
 		3748D5301E6A5CDE00544D41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3748D52E1E6A5CDE00544D41 /* LaunchScreen.storyboard */; };
 		CFD4C5451E6A71EF00D05CE5 /* TryTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD4C5441E6A71EF00D05CE5 /* TryTranslate.swift */; };
+		E686288D1E6A8E6600C7DABC /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E686288C1E6A8E6600C7DABC /* RoomViewController.swift */; };
+		E686288F1E6A8EB000C7DABC /* ChatPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E686288E1E6A8EB000C7DABC /* ChatPostCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		3748D52F1E6A5CDE00544D41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3748D5311E6A5CDE00544D41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFD4C5441E6A71EF00D05CE5 /* TryTranslate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TryTranslate.swift; path = TranslateAPIs/TryTranslate.swift; sourceTree = "<group>"; };
+		E686288C1E6A8E6600C7DABC /* RoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
+		E686288E1E6A8EB000C7DABC /* ChatPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatPostCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				3748D52C1E6A5CDE00544D41 /* Assets.xcassets */,
 				3748D52E1E6A5CDE00544D41 /* LaunchScreen.storyboard */,
 				3748D5311E6A5CDE00544D41 /* Info.plist */,
+				E686288C1E6A8E6600C7DABC /* RoomViewController.swift */,
+				E686288E1E6A8EB000C7DABC /* ChatPostCell.swift */,
 			);
 			path = Translation;
 			sourceTree = "<group>";
@@ -150,6 +156,8 @@
 				3748D5281E6A5CDE00544D41 /* RootViewController.swift in Sources */,
 				3748D5261E6A5CDE00544D41 /* AppDelegate.swift in Sources */,
 				CFD4C5451E6A71EF00D05CE5 /* TryTranslate.swift in Sources */,
+				E686288F1E6A8EB000C7DABC /* ChatPostCell.swift in Sources */,
+				E686288D1E6A8E6600C7DABC /* RoomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
