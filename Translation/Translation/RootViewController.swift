@@ -30,6 +30,8 @@ class RootViewController: UIViewController {
 
         } else if segue.identifier == "EmbedEnglish" {
             englishViewController = segue.destination
+
+            englishViewController?.view.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
         }
     }
 
