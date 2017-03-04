@@ -12,48 +12,13 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     fileprivate let tableView = UITableView()
     
-    fileprivate var chatPosts = [
-        ChatPost(isMyPost: true, text: "こんにちわ"),
-        ChatPost(isMyPost: false, text: "Hello"),
-        ChatPost(isMyPost: true, text: "おはよ\n\n\n\nう"),
-        ChatPost(isMyPost: false, text: "Good morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morning"),
-        ChatPost(isMyPost: true, text: "こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  "),
-        ChatPost(isMyPost: false, text: "Hello"),
-        ChatPost(isMyPost: true, text: "おはよ\n\n\n\nう"),
-        ChatPost(isMyPost: false, text: "Good morning"),
-        ChatPost(isMyPost: true, text: "こんにちわ"),
-        ChatPost(isMyPost: false, text: "Hello"),
-        ChatPost(isMyPost: true, text: "おはよ\n\n\n\nう"),
-        ChatPost(isMyPost: false, text: "Good morning"),
-        ChatPost(isMyPost: true, text: "こんにちわ"),
-        ChatPost(isMyPost: false, text: "Hello"),
-        ChatPost(isMyPost: true, text: "おはよ\n\n\n\nう"),
-        ChatPost(isMyPost: false, text: "Good morning"),
-        ChatPost(isMyPost: true, text: "こんにちわ"),
-        ChatPost(isMyPost: false, text: "Hello"),
-        ChatPost(isMyPost: true, text: "おはよ\n\n\n\nう"),
-        ChatPost(isMyPost: false, text: "Good morning"),
-        ChatPost(isMyPost: true, text: "こんにちわ"),
-        ChatPost(isMyPost: false, text: "Hello"),
-        ChatPost(isMyPost: true, text: "おはよ\n\n\n\nう"),
-        ChatPost(isMyPost: false, text: "Good morning"),
-        ChatPost(isMyPost: true, text: "こんにちわ"),
-        ChatPost(isMyPost: false, text: "Hello"),
-        ChatPost(isMyPost: true, text: "おはよ\n\n\n\nう"),
-        ChatPost(isMyPost: false, text: "Good morning"),
-        ChatPost(isMyPost: true, text: "こんにちわ"),
-        ChatPost(isMyPost: false, text: "Hello"),
-        ChatPost(isMyPost: true, text: "おはよ\n\n\n\nう"),
-        ChatPost(isMyPost: false, text: "Good morning"),
-        ChatPost(isMyPost: true, text: "こんにちわ"),
-        ChatPost(isMyPost: false, text: "Hello"),
-        ChatPost(isMyPost: true, text: "おはよ\n\n\n\nう"),
-        ChatPost(isMyPost: false, text: "Good morning"),
-        ]
+    fileprivate let viewModel = RoomViewModel()
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        viewModel.delegate = self
         
         // tableView
         addSubviewToWhole(subview: tableView)
@@ -75,7 +40,7 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chatPosts.count
+        return viewModel.posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -87,10 +52,10 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
         }
         
-        let chatPost = chatPosts[indexPath.row]
+        let chatPost = viewModel.posts[indexPath.row]
         
         if let cell = dequeue(chatPost: chatPost) {
-            cell.fill(text: chatPost.text)
+            cell.fill(text: chatPost.text, isTranslated: chatPost.isTranslated)
             return cell
         }
         
@@ -98,19 +63,9 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt: IndexPath) {
-        let chatPost = chatPosts[didSelectRowAt.row]
-        addChatPost(chatPost: chatPost)
+        let chatPost = viewModel.posts[didSelectRowAt.row]
+        viewModel.translate(input: chatPost.text)
     }
-    
-    func addChatPost(chatPost: ChatPost) {
-        let insertingIndexPath = IndexPath(row: 0, section: 0)
-        var newPosts = chatPosts
-        newPosts.insert(chatPost, at: 0)
-        
-        chatPosts = newPosts
-        tableView.insertRows(at: [insertingIndexPath], with: .top)
-    }
-    
 }
 
 extension UIViewController {
@@ -128,10 +83,18 @@ extension UIViewController {
     }
 }
 
+extension RoomViewController: RoomViewModelDelegate {
+    func added() {
+        let insertingIndexPath = IndexPath(row: 0, section: 0)
+        tableView.insertRows(at: [insertingIndexPath], with: .top)
+    }
+}
+
 
 
 struct ChatPost {
     let isMyPost: Bool
+    let isTranslated: Bool
     let text: String
 }
 

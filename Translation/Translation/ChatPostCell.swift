@@ -15,8 +15,9 @@ class ChatPostCell: UITableViewCell {
     let titleLabel = PaddingLabel()
     let activeColor = UIColor(displayP3Red: 0, green: 166/255, blue: 233/255, alpha: 1.0)
     
-    func fill(text: String) {
-        titleLabel.text = text
+    func fill(text: String, isTranslated: Bool) {
+        titleLabel.text = isTranslated ? "translated:\n \(text)" : text
+        
     }
     
     open func initViews() {

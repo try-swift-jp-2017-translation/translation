@@ -19,6 +19,7 @@
 		E686288D1E6A8E6600C7DABC /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E686288C1E6A8E6600C7DABC /* RoomViewController.swift */; };
 		E686288F1E6A8EB000C7DABC /* ChatPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E686288E1E6A8EB000C7DABC /* ChatPostCell.swift */; };
 		E68628911E6A999E00C7DABC /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68628901E6A999E00C7DABC /* PaddingLabel.swift */; };
+		E68628931E6A9B6D00C7DABC /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68628921E6A9B6D00C7DABC /* RoomViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +50,7 @@
 		E686288C1E6A8E6600C7DABC /* RoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		E686288E1E6A8EB000C7DABC /* ChatPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatPostCell.swift; sourceTree = "<group>"; };
 		E68628901E6A999E00C7DABC /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		E68628921E6A9B6D00C7DABC /* RoomViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				E686288C1E6A8E6600C7DABC /* RoomViewController.swift */,
 				E686288E1E6A8EB000C7DABC /* ChatPostCell.swift */,
 				E68628901E6A999E00C7DABC /* PaddingLabel.swift */,
+				E68628921E6A9B6D00C7DABC /* RoomViewModel.swift */,
 			);
 			path = Translation;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				3748D5261E6A5CDE00544D41 /* AppDelegate.swift in Sources */,
 				CFD4C5451E6A71EF00D05CE5 /* TryTranslate.swift in Sources */,
 				E686288F1E6A8EB000C7DABC /* ChatPostCell.swift in Sources */,
+				E68628931E6A9B6D00C7DABC /* RoomViewModel.swift in Sources */,
 				E686288D1E6A8E6600C7DABC /* RoomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
