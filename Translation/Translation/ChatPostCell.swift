@@ -29,6 +29,9 @@ class ChatPostCell: UITableViewCell {
         titleLabel.numberOfLines = 0
         titleLabel.layer.cornerRadius = 5
         titleLabel.clipsToBounds = true
+        
+        transform = CGAffineTransform(a: 1, b: 0, c: 0, d: -1, tx: 0, ty: 0)
+
     }
     
 }

@@ -66,6 +66,7 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.backgroundColor = UIColor(displayP3Red: 239/255, green: 239/255, blue: 244/255, alpha: 1.0)
         tableView.separatorColor = UIColor.clear
         //        tableView.allowsSelection = false
+        tableView.transform = CGAffineTransform(a: 1, b: 0, c: 0, d: -1, tx: 0, ty: 0)
     }
     
     override func didReceiveMemoryWarning() {
@@ -102,12 +103,12 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func addChatPost(chatPost: ChatPost) {
-        let insertingIndexPath = IndexPath(row: chatPosts.count, section: 0)
+        let insertingIndexPath = IndexPath(row: 0, section: 0)
         var newPosts = chatPosts
-        newPosts.append(chatPost)
+        newPosts.insert(chatPost, at: 0)
         
         chatPosts = newPosts
-        tableView.insertRows(at: [insertingIndexPath], with: .bottom)
+        tableView.insertRows(at: [insertingIndexPath], with: .top)
     }
     
 }
