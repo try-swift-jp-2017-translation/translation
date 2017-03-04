@@ -107,11 +107,10 @@ extension RoomViewModel {
     ///   - peerID: PeerID
     private func receive(text: AnyObject?, from peerID: MCPeerID) {
         guard let data = text else { return }
-        guard let textValue = text as? String else { return }
-        guard let language = data["language"] as? String else { return }
-        print("displayName: \(peerID.displayName), language: \(language)")
+        guard let text = data["text"] as? String else { return }
+        print("displayName: \(peerID.displayName), text: \(text)")
         DispatchQueue.main.async {
-            self.add(chatPost: ChatPost(isMyPost: false, isTranslated: true, text: textValue))
+            self.add(chatPost: ChatPost(isMyPost: false, isTranslated: true, text: text))
             // 画面描画
         }
     }
