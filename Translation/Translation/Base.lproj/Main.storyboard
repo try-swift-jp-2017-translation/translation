@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad9_7" orientation="portrait">
+    <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,24 +19,24 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="at3-ag-QSQ">
-                                <rect key="frame" x="20" y="507" width="728" height="10"/>
+                                <rect key="frame" x="20" y="379" width="984" height="10"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="fnc-KR-nUL"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tjp-Y5-Out">
-                                <rect key="frame" x="20" y="525" width="728" height="479"/>
+                                <rect key="frame" x="20" y="397" width="984" height="351"/>
                                 <connections>
                                     <segue destination="IC6-hm-dYb" kind="embed" identifier="EmbedJapanese" id="RnK-n6-j9Z"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gG-Ta-cFt">
-                                <rect key="frame" x="20" y="28" width="728" height="471"/>
+                                <rect key="frame" x="20" y="28" width="984" height="343"/>
                                 <connections>
                                     <segue destination="zGQ-sK-cyQ" kind="embed" identifier="EmbedEnglish" id="Avp-yx-z88"/>
                                 </connections>
@@ -67,11 +67,11 @@
             <objects>
                 <viewController id="IC6-hm-dYb" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LYr-uo-wRo">
-                        <rect key="frame" x="0.0" y="0.0" width="728" height="479"/>
+                        <rect key="frame" x="0.0" y="0.0" width="984" height="351"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Japanese" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7i-xb-vHl">
-                                <rect key="frame" x="327" y="229" width="74" height="21"/>
+                                <rect key="frame" x="455" y="165" width="74" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -93,11 +93,11 @@
             <objects>
                 <viewController id="zGQ-sK-cyQ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EnY-MV-XtV">
-                        <rect key="frame" x="0.0" y="0.0" width="728" height="471"/>
+                        <rect key="frame" x="0.0" y="0.0" width="984" height="343"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bR-SS-rnG">
-                                <rect key="frame" x="336" y="225" width="56" height="21"/>
+                                <rect key="frame" x="464" y="161" width="56" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
