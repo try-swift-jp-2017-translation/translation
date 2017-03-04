@@ -12,6 +12,7 @@
 		3748D52B1E6A5CDE00544D41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3748D5291E6A5CDE00544D41 /* Main.storyboard */; };
 		3748D52D1E6A5CDE00544D41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3748D52C1E6A5CDE00544D41 /* Assets.xcassets */; };
 		3748D5301E6A5CDE00544D41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3748D52E1E6A5CDE00544D41 /* LaunchScreen.storyboard */; };
+		CFD4C5451E6A71EF00D05CE5 /* TryTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD4C5441E6A71EF00D05CE5 /* TryTranslate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		3748D52C1E6A5CDE00544D41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3748D52F1E6A5CDE00544D41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3748D5311E6A5CDE00544D41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFD4C5441E6A71EF00D05CE5 /* TryTranslate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TryTranslate.swift; path = TranslateAPIs/TryTranslate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		3748D5241E6A5CDE00544D41 /* Translation */ = {
 			isa = PBXGroup;
 			children = (
+				CFD4C5431E6A71A800D05CE5 /* TranslateAPIs */,
 				3748D5251E6A5CDE00544D41 /* AppDelegate.swift */,
 				3748D5271E6A5CDE00544D41 /* RootViewController.swift */,
 				3748D5291E6A5CDE00544D41 /* Main.storyboard */,
@@ -62,6 +65,14 @@
 				3748D5311E6A5CDE00544D41 /* Info.plist */,
 			);
 			path = Translation;
+			sourceTree = "<group>";
+		};
+		CFD4C5431E6A71A800D05CE5 /* TranslateAPIs */ = {
+			isa = PBXGroup;
+			children = (
+				CFD4C5441E6A71EF00D05CE5 /* TryTranslate.swift */,
+			);
+			name = TranslateAPIs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 			files = (
 				3748D5281E6A5CDE00544D41 /* RootViewController.swift in Sources */,
 				3748D5261E6A5CDE00544D41 /* AppDelegate.swift in Sources */,
+				CFD4C5451E6A71EF00D05CE5 /* TryTranslate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
