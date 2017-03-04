@@ -1,50 +1,44 @@
 # translation
 try! swift jp 2017 translation team
 
-1対1の翻訳コミュニケーションツール
+## Inspiration
 
-## 役割
+try! Swift is an international conference. Some attendees speak only in Japanese, some only in English. We’d like to encourage all to communicate with each other despite the language barrier. 
 
-1. 音声入力から文字列への変換
-    文章 単語    
-- 日英、英日の翻訳
-    - API
-    - オフライン -> 単語
-- iPadでUI構築
-    tableView, textView
-- デザイン
-    - 二分割
-    - 文字の見易さ
-    - 相手側の翻訳元言語のみさらに反転
-    - ロゴ
-    - スプラッシュ
-- 総合
-    - リポジトリ
-    - 調査
-        - 声質識別
-    - プレゼン資料
-        - 英語
-        - AirPlay 動画 -> 会話 単語補助
+## What it does
 
-## 発表
-- プレゼン
-    - 英語のみ？有利？
+- Translate automatically from one user’s mother language to another’s.
 
-## 詳細
+## How I built it 
 
-- 二分割 片方反転
-    - タップイベントの問題
-- 日本語、英語での音声入力
-    - 言語固定
-    - 声質識別 方向
-- UI
-    - ミュート
-    - テンプレ
-    - クリア 初期化ボタン
-    - 初期画面
-        - 声質識別 初期化 声質登録
-        - 日英を表示
-    - 音声入力中のフィードバック
-- 最優先
-    - パフォーマンス
+- SpeechKit
+- P2P
+  - Multipeer Connectivity Framework
+
+## Challenges I ran into
+
+- Removing language selection
+- Quickly enabling communication between different languages
+
+## Accomplishments that I'm proud of
+
+## What I learned
+
+- Automatic language detection is hard
+- MicrosoftはRecognition
+
+## What's next for One-to-one translation communication tool
+
+- Enable online chat
+- Use for language learning
+- Ease international communication. 
+
+## Built With
+
+- Yu Sugawara
+- Yusuke Kuroiwa
+- Kazuya Okamoto
+- Fumiya Nakamura
+- Kazunori Katsuta
+- Nicolás Miari
         
