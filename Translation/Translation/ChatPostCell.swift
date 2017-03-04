@@ -12,7 +12,7 @@ private let margin: CGFloat = -8
 
 class ChatPostCell: UITableViewCell {
     
-    let titleLabel = UILabel()
+    let titleLabel = PaddingLabel()
     let activeColor = UIColor(displayP3Red: 0, green: 166/255, blue: 233/255, alpha: 1.0)
     
     func fill(text: String) {
