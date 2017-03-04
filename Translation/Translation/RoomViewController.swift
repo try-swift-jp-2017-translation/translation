@@ -153,8 +153,7 @@ extension RoomViewController {
     
     /// 現在言語を送信する
     func sendLanguage() {
-        // FIXME: .englishじゃなくて設定されている言語を送信する
-        ConnectionManager.setup(language: .english)
+        ConnectionManager.setup(language: Environment.preferredLanguage)
     }
 }
 

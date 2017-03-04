@@ -53,8 +53,8 @@ struct ConnectionManager {
         }
     }
     
-    static func setup(language: Language) {
-        let object = ["language": language.rawValue] as AnyObject
+    static func setup(language: String) {
+        let object = ["language": language] as AnyObject
         sendEvent(Event.language.rawValue, object: object)
     }
     
