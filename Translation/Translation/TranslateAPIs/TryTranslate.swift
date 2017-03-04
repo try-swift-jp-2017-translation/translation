@@ -16,7 +16,7 @@ enum TranslateMethod {
 enum TranslateType {
     case e2j    // 英語　→　日本語
     case j2e    // 日本語　→　英語
-    case setInInit
+    case setInInit      // init(srcLang, dstLang)にて設定
 }
 
 
@@ -26,11 +26,11 @@ let microsoftApi = "http://api.microsofttranslator.com/v2/Http.svc/Translate"
 class TryTranslate {
     
     /// Google Translate API Key of 勝田個人のっす（もう使えません）
-    private var apiKeyOfGoogle = "AIzaSyBu2JgLdkLLV5eiMt6L43cNJqznnSzNIMU"
+    private var apiKeyOfGoogle = "APIキーを入れてね❤️"
     
     private var apiKeyOfMicrosoft = ""
     
-    private var translateMethod: TranslateMethod = .Google  // Default is sGoogle translate
+    private var translateMethod: TranslateMethod = .Google  // Default is Google translate
     private var srcLang = "en"                              // default source is English
     private var dstLang = "ja"                              // default destination is Japanese
 
@@ -71,6 +71,11 @@ class TryTranslate {
     }
     
     func translate(inputText: String, type: TranslateType, callback:@escaping (_ translatedText:String) -> ()) {
+        
+        // When input text is empty not to request via http
+        guard (inputText != "") else {
+            return callback("-")
+        }
         
         if self.translateMethod == .Google {
             
