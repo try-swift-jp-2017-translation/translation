@@ -13,6 +13,7 @@
 		3748D52D1E6A5CDE00544D41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3748D52C1E6A5CDE00544D41 /* Assets.xcassets */; };
 		3748D5301E6A5CDE00544D41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3748D52E1E6A5CDE00544D41 /* LaunchScreen.storyboard */; };
 		BE08B0131E6AAB29005F12CB /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE08B0121E6AAB29005F12CB /* Environment.swift */; };
+		BE08B0151E6AB4E1005F12CB /* Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE08B0141E6AB4E1005F12CB /* Listener.swift */; };
 		BE913AE21E6A8C3600567881 /* PeerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE913AE11E6A8C3600567881 /* PeerKit.framework */; };
 		BE913AE31E6A8C3600567881 /* PeerKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE913AE11E6A8C3600567881 /* PeerKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE913AE71E6A8C7100567881 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE913AE61E6A8C7100567881 /* ConnectionManager.swift */; };
@@ -46,6 +47,7 @@
 		3748D52F1E6A5CDE00544D41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3748D5311E6A5CDE00544D41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE08B0121E6AAB29005F12CB /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		BE08B0141E6AB4E1005F12CB /* Listener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listener.swift; sourceTree = "<group>"; };
 		BE913AE11E6A8C3600567881 /* PeerKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PeerKit.framework; path = Carthage/Build/iOS/PeerKit.framework; sourceTree = "<group>"; };
 		BE913AE61E6A8C7100567881 /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
 		CFD4C5441E6A71EF00D05CE5 /* TryTranslate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TryTranslate.swift; path = TranslateAPIs/TryTranslate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				3748D52C1E6A5CDE00544D41 /* Assets.xcassets */,
 				3748D52E1E6A5CDE00544D41 /* LaunchScreen.storyboard */,
 				3748D5311E6A5CDE00544D41 /* Info.plist */,
+				BE08B0141E6AB4E1005F12CB /* Listener.swift */,
 				E686288C1E6A8E6600C7DABC /* RoomViewController.swift */,
 				E686288E1E6A8EB000C7DABC /* ChatPostCell.swift */,
 				E68628901E6A999E00C7DABC /* PaddingLabel.swift */,
@@ -202,6 +205,7 @@
 				E686288F1E6A8EB000C7DABC /* ChatPostCell.swift in Sources */,
 				E68628931E6A9B6D00C7DABC /* RoomViewModel.swift in Sources */,
 				E686288D1E6A8E6600C7DABC /* RoomViewController.swift in Sources */,
+				BE08B0151E6AB4E1005F12CB /* Listener.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
