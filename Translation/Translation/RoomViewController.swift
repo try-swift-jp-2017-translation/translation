@@ -25,6 +25,7 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
             switch result {
             case .success:
                 print("auth success")
+                try! listener.startRecording()
             case .failure(let error):
                 print("auth error: \(error)")
             }
