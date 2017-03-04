@@ -85,6 +85,10 @@ extension RoomViewModel {
     
     private func receive(removePeerID: MCPeerID) {
         // TODO: remove impl.
+        DispatchQueue.main.async {
+            // 画面描画
+            self.add(chatPost: ChatPost(isMyPost: true, isTranslated: true, text: "切断されました"))
+        }
     }
     
     /// 言語を受け取る
@@ -110,14 +114,18 @@ extension RoomViewModel {
         guard let text = data["text"] as? String else { return }
         print("displayName: \(peerID.displayName), text: \(text)")
         DispatchQueue.main.async {
-            self.add(chatPost: ChatPost(isMyPost: false, isTranslated: true, text: text))
             // 画面描画
+            self.add(chatPost: ChatPost(isMyPost: false, isTranslated: true, text: text))
         }
     }
     
     /// 現在言語を送信する
     func sendLanguage() {
         ConnectionManager.setup(language: Environment.preferredLanguage)
+        DispatchQueue.main.async {
+            // 画面描画
+            self.add(chatPost: ChatPost(isMyPost: true, isTranslated: true, text: "接続されました"))
+        }
     }
 }
 
