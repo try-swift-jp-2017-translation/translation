@@ -13,4 +13,8 @@ struct Environment {
     static var preferredLanguage: String {
         return Locale.preferredLanguages.first!
     }
+    
+    static var isJapanese: Bool {
+        return preferredLanguage == "ja"
+    }
 }

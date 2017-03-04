@@ -24,7 +24,14 @@ class RoomViewModel {
         
         add(chatPost: ChatPost(isMyPost: true, isTranslated: false, text: input))
         
-        translater.translate(inputText: input, type: .j2e, callback: { translated in
+        let translateType: TranslateType = {
+            if Environment.isJapanese {
+                return .j2e
+            } else {
+                return .e2j
+            }
+        }()
+        translater.translate(inputText: input, type: translateType, callback: { translated in
             DispatchQueue.main.async {
                 self.add(chatPost: ChatPost(isMyPost: true, isTranslated: true, text: translated))
             }
