@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MultipeerConnectivity
 
 class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -15,13 +14,11 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     fileprivate let viewModel = RoomViewModel()
     
-    fileprivate var peers: [Peer]?
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        setupConnection()
+        viewModel.setupConnection()
         
         viewModel.delegate = self
         
@@ -88,75 +85,6 @@ extension UIViewController {
     }
 }
 
-// MARK: - MultipeerConnectivity
-
-extension RoomViewController {
-    
-    /// 接続開始
-    /// 各種イベントを受け取る
-    func setupConnection() {
-        ConnectionManager.start()
-        receiveEvent()
-    }
-    
-    /// 各種イベントを受け取る
-    func receiveEvent() {
-        ConnectionManager.onConnect { [weak self] (myPeerID, peerID) in
-            print("特定の端末が接続された: \(myPeerID.displayName), \(peerID.displayName)")
-            self?.sendLanguage()
-        }
-        
-        ConnectionManager.onDisconnect { [weak self] (myPeerID, peerID)  in
-            print("特定の端末が切断された: \(myPeerID.displayName), \(peerID.displayName)")
-            self?.receive(removePeerID: peerID)
-        }
-        
-        ConnectionManager.onEvent(event: .language) { [weak self] (peerID, object) in
-            print("言語を受け取りました \(peerID): \(object)")
-            self?.receive(language: object, from: peerID)
-        }
-        
-        ConnectionManager.onEvent(event: .text) { [weak self] (peerID, object) in
-            print("テキストを受け取りました \(peerID): \(object)")
-            self?.receive(text: object, from: peerID)
-        }
-    }
-    
-    private func receive(removePeerID: MCPeerID) {
-        // TODO: remove impl.
-    }
-    
-    /// 言語を受け取る
-    ///
-    /// - Parameters:
-    ///   - language: 言語
-    ///   - peerID: PeerID
-    private func receive(language: AnyObject?, from peerID: MCPeerID) {
-        guard let data = language else { return }
-        guard let languageValue = data["language"] as? String else { return }
-        guard let language = Language(rawValue: languageValue) else { return }
-        print("displayName: \(peerID.displayName), language: \(language)")
-        let peer = Peer(peerID: peerID, language: language)
-        peers?.append(peer)
-    }
-    
-    /// 変換されたテキストを受け取る
-    ///
-    /// - Parameters:
-    ///   - text: テキスト
-    ///   - peerID: PeerID
-    private func receive(text: AnyObject?, from peerID: MCPeerID) {
-        guard let data = text else { return }
-        guard let language = data["language"] as? String else { return }
-        print("displayName: \(peerID.displayName), language: \(language)")
-    }
-    
-    /// 現在言語を送信する
-    func sendLanguage() {
-        ConnectionManager.setup(language: Environment.preferredLanguage)
-    }
-}
-
 extension RoomViewController: RoomViewModelDelegate {
     func added() {
         let insertingIndexPath = IndexPath(row: 0, section: 0)
@@ -164,12 +92,10 @@ extension RoomViewController: RoomViewModelDelegate {
     }
 }
 
-
+// MARK: - MultipeerConnectivity
 
 struct ChatPost {
     let isMyPost: Bool
     let isTranslated: Bool
     let text: String
 }
-
-

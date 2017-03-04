@@ -10,14 +10,9 @@ import Foundation
 import PeerKit
 import MultipeerConnectivity
 
-enum Language: String {
-    case japanese
-    case english
-}
-
 struct Peer {
     var peerID: MCPeerID?
-    var language: Language?
+    var language: String?
 }
 
 struct ConnectionManager {
