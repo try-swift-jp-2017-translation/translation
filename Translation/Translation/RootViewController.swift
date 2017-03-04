@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RootViewController.swift
 //  Translation
 //
 //  Created by Nicolás Fernando Miari on 2017/03/04.
@@ -8,7 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RootViewController: UIViewController {
+
+    ///
+    var englishViewController: UIViewController?
+
+    ///
+    var japaneseViewController: UIViewController?
 
     // MARK: - UIViewController
 
