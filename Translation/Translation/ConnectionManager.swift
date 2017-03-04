@@ -8,10 +8,16 @@
 
 import Foundation
 import PeerKit
+import MultipeerConnectivity
 
 enum Language: String {
-    case english
     case japanese
+    case english
+}
+
+struct Peer {
+    var peerID: MCPeerID?
+    var language: Language?
 }
 
 struct ConnectionManager {
@@ -22,6 +28,10 @@ struct ConnectionManager {
     }
     
     private static let transceiveName = "translation"
+    
+    //    static var peers: [MCPeerID] {
+    //        return PeerKit.session?.connectedPeers as [MCPeerID]? ?? []
+    //    }
     
     static func start() {
         PeerKit.transceive(serviceType: transceiveName)
