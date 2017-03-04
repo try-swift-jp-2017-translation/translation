@@ -16,11 +16,16 @@ enum TranslateMethod {
 enum TranslateType {
     case e2j    // 英語　→　日本語
     case j2e    // 日本語　→　英語
+    case setInInit
 }
+
+
+let googleApi = "https://www.googleapis.com/language/translate/v2"
+let microsoftApi = "http://api.microsofttranslator.com/v2/Http.svc/Translate"
 
 class TryTranslate {
     
-    /// Google Translate API Key of 勝田個人のっす
+    /// Google Translate API Key of 勝田個人のっす（もう使えません）
     private var apiKeyOfGoogle = "AIzaSyBu2JgLdkLLV5eiMt6L43cNJqznnSzNIMU"
     
     private var apiKeyOfMicrosoft = ""
@@ -48,9 +53,12 @@ class TryTranslate {
         case .e2j:
             self.srcLang = "en"
             self.dstLang = "ja"
+            break
         case .j2e:
             self.srcLang = "ja"
             self.dstLang = "en"
+            break
+        case .setInInit: break
         }
     }
 
@@ -70,13 +78,16 @@ class TryTranslate {
             case .e2j:
                 self.srcLang = "en"
                 self.dstLang = "ja"
+                break
             case .j2e:
                 self.srcLang = "ja"
                 self.dstLang = "en"
+                break
+            case .setInInit: break
             }
 
             if let urlEncodedText = inputText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) {
-                if let url = URL(string: "https://www.googleapis.com/language/translate/v2?key=\(self.apiKeyOfGoogle)&q=\(urlEncodedText)&source=\(self.srcLang)&target=\(self.dstLang)&format=text") {
+                if let url = URL(string: "\(googleApi)?key=\(self.apiKeyOfGoogle)&q=\(urlEncodedText)&source=\(self.srcLang)&target=\(self.dstLang)&format=text") {
                     
                     print(url.absoluteString)
                     
