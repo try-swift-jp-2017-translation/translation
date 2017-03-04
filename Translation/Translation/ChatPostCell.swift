@@ -52,11 +52,10 @@ class LeftCell: ChatPostCell {
     override func initViews() {
         super.initViews()
         contentView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor, constant: margin).isActive = true
-        contentView.trailingAnchor.constraint(greaterThanOrEqualTo: titleLabel.trailingAnchor, constant: -margin).isActive = true
+        contentView.trailingAnchor.constraint(greaterThanOrEqualTo: titleLabel.trailingAnchor, constant: -margin * 4).isActive = true
         
         titleLabel.backgroundColor = activeColor
         titleLabel.textColor = .white
-        titleLabel.textAlignment = .right
     }
     
 }
@@ -79,12 +78,11 @@ class RightCell: ChatPostCell {
     
     override func initViews() {
         super.initViews()
-        //        contentView.leadingAnchor.constraint(greaterThanOrEqualTo: titleLabel.leadingAnchor, constant: margin).isActive = true
+        titleLabel.leadingAnchor.constraint(greaterThanOrEqualTo: contentView.leadingAnchor, constant: -margin * 4).isActive = true
         contentView.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: -margin).isActive = true
         
         titleLabel.backgroundColor = .white
         titleLabel.textColor = .black
-        titleLabel.textAlignment = .right
     }
     
 }

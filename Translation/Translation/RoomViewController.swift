@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     fileprivate let tableView = UITableView()
@@ -18,8 +16,8 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
         ChatPost(isMyPost: true, text: "こんにちわ"),
         ChatPost(isMyPost: false, text: "Hello"),
         ChatPost(isMyPost: true, text: "おはよ\n\n\n\nう"),
-        ChatPost(isMyPost: false, text: "Good morning"),
-        ChatPost(isMyPost: true, text: "こんにちわ"),
+        ChatPost(isMyPost: false, text: "Good morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morningGood morning"),
+        ChatPost(isMyPost: true, text: "こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  こんにちわ  "),
         ChatPost(isMyPost: false, text: "Hello"),
         ChatPost(isMyPost: true, text: "おはよ\n\n\n\nう"),
         ChatPost(isMyPost: false, text: "Good morning"),
