@@ -32,13 +32,13 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tjp-Y5-Out">
                                 <rect key="frame" x="20" y="525" width="728" height="479"/>
                                 <connections>
-                                    <segue destination="IC6-hm-dYb" kind="embed" id="RnK-n6-j9Z"/>
+                                    <segue destination="IC6-hm-dYb" kind="embed" identifier="EmbedJapanese" id="RnK-n6-j9Z"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gG-Ta-cFt">
                                 <rect key="frame" x="20" y="28" width="728" height="471"/>
                                 <connections>
-                                    <segue destination="zGQ-sK-cyQ" kind="embed" id="Avp-yx-z88"/>
+                                    <segue destination="zGQ-sK-cyQ" kind="embed" identifier="EmbedEnglish" id="Avp-yx-z88"/>
                                 </connections>
                             </containerView>
                         </subviews>

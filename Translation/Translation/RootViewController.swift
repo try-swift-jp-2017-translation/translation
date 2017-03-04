@@ -25,6 +25,12 @@ class RootViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
+        if segue.identifier == "EmbedJapanese" {
+            japaneseViewController = segue.destination
+
+        } else if segue.identifier == "EmbedEnglish" {
+            englishViewController = segue.destination
+        }
     }
 
 }
