@@ -115,8 +115,10 @@ extension UIViewController {
 
 extension RoomViewController: RoomViewModelDelegate {
     func added() {
-        let insertingIndexPath = IndexPath(row: 0, section: 0)
-        tableView.insertRows(at: [insertingIndexPath], with: .top)
+        DispatchQueue.main.async {
+            let insertingIndexPath = IndexPath(row: 0, section: 0)
+            self.tableView.insertRows(at: [insertingIndexPath], with: .top)
+        }
     }
 }
 
