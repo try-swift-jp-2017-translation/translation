@@ -14,6 +14,33 @@ class RoomViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     fileprivate let viewModel = RoomViewModel()
     
+    var listener: Listener?
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let listener = Listener(language: Environment.isJapanese ? . japanese : .english)
+        self.listener = listener
+        listener.requestAuthorization(authorizationCompletion: { (result) in
+            switch result {
+            case .success:
+                print("auth success")
+            case .failure(let error):
+                print("auth error: \(error)")
+            }
+        }, didChangeAvailability: { (available) in
+            print("available: \(available)")
+        }) { [unowned self] (result) in
+            switch result {
+            case .newString(let string):
+                print("翻訳します: \(string)")
+                self.viewModel.translate(input: string)
+            case .stop:
+                print("stop")
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
