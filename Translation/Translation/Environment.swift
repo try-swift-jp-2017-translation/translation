@@ -15,6 +15,6 @@ struct Environment {
     }
     
     static var isJapanese: Bool {
-        return preferredLanguage == "ja"
+        return preferredLanguage == "ja-JP"
     }
 }
